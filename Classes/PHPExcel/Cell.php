@@ -267,6 +267,7 @@ class PHPExcel_Cell
      */
     public function getCalculatedValue($resetLog = true)
     {
+        $this->value = str_replace('==', '=', $this->value);
 //echo 'Cell '.$this->getCoordinate().' value is a '.$this->dataType.' with a value of '.$this->getValue().PHP_EOL;
         if ($this->dataType == PHPExcel_Cell_DataType::TYPE_FORMULA) {
             try {
